@@ -1,0 +1,1687 @@
+/* ========== FONT DAN PENGATURAN DASAR ========== */
+body,
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+p,
+.navbar,
+.brand,
+.btn-simple,
+.alert,
+a,
+.td-name,
+td,
+button.close {
+    font-family: Nunito, sans-serif;
+}
+
+body,
+html {
+    font-size: 15px;
+    background: #ffffff;
+}
+
+/* ========== SIDEBAR STYLING ========== */
+.sidebar,
+.sidebar[data-background-color="white"] {
+    box-shadow: none;
+}
+
+@media (min-width: 992px) {
+    .sidebar .nav,
+    .sidebar[data-background-color="white"] .nav {
+        margin-top: 10px;
+    }
+}
+
+.sidebar.sidebar-style-2 .nav .nav-item a {
+    padding: 9px 12px;
+    border-radius: 12px;
+}
+
+/* Sidebar hover - menggunakan CSS variable untuk tema dinamis */
+.sidebar.sidebar-style-2 .nav .nav-item a:hover p,
+.sidebar.sidebar-style-2 .nav .nav-item a:hover i,
+.sidebar.sidebar-style-2 .nav .nav-item a:focus p,
+.sidebar.sidebar-style-2 .nav .nav-item a:focus i,
+.sidebar.sidebar-style-2 .nav .nav-item a[data-toggle=collapse][aria-expanded=true] p,
+.sidebar.sidebar-style-2 .nav .nav-item a[data-toggle=collapse][aria-expanded=true] i {
+    color: var(--primary-color, #14438B) !important;
+}
+
+.sidebar.sidebar-style-2 .nav .nav-item a p {
+    line-height: normal;
+    color: #575962 !important;
+}
+
+.sidebar.sidebar-style-2 .nav .nav-item a i {
+    font-size: 21px !important;
+}
+
+/* Sidebar active item - menggunakan CSS variable untuk tema dinamis */
+.sidebar.sidebar-style-2 .nav.nav-primary .nav-item .active {
+    background: var(--primary-color, #14438B) !important;
+    box-shadow: 0 17px 20px -8px var(--primary-shadow, rgba(20, 67, 139, 0.231372549));
+}
+
+.sidebar.sidebar-style-2 .nav.nav-primary .nav-item .active p,
+.sidebar.sidebar-style-2 .nav.nav-primary .nav-item .active i {
+    color: #ffffff !important;
+}
+
+.sidebar.sidebar-style-2 .nav.nav-primary .nav-item .active:hover p,
+.sidebar.sidebar-style-2 .nav.nav-primary .nav-item .active:hover i,
+.sidebar.sidebar-style-2 .nav.nav-primary .nav-item .active:focus p,
+.sidebar.sidebar-style-2 .nav.nav-primary .nav-item .active:focus i {
+    color: #ffffff !important;
+}
+
+.sidebar .nav.nav-primary>.nav-item a:focus i,
+.sidebar .nav.nav-primary>.nav-item a:hover i,
+.sidebar .nav.nav-primary>.nav-item a[data-toggle=collapse][aria-expanded=true] i,
+.sidebar[data-background-color=white] .nav.nav-primary>.nav-item a:focus i,
+.sidebar[data-background-color=white] .nav.nav-primary>.nav-item a:hover i,
+.sidebar[data-background-color=white] .nav.nav-primary>.nav-item a[data-toggle=collapse][aria-expanded=true] i {
+    color: var(--primary-color, #14438B) !important
+}
+
+/* ========== LAYOUT DAN CONTAINER ========== */
+
+.main-panel>.container {
+    background: #f4f7fb;
+    margin-top: 79px;
+    max-width: 98.5% !important;
+    border-radius: 21px;
+}
+
+@media screen and (max-width: 991.5px) {
+    .main-panel>.container {
+        max-width: 97.5% !important;
+        padding-left: 25px !important;
+        padding-right: 25px !important;
+    }
+}
+
+.page-inner {
+    padding: 30px 0;
+}
+
+@media (min-width: 992px) {
+    .page-inner {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+}
+
+/* ========== NAVBAR DAN TOPBAR ========== */
+
+.navbar .navbar-nav .topbar-user .profile-pic {
+    color: #2a2f5b;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar .navbar-nav .topbar-user .profile-pic:hover,
+.navbar .navbar-nav .topbar-user .profile-pic:focus {
+    background: #ffffff;
+}
+
+/* Profile username di navbar - truncate untuk nama panjang */
+.navbar .navbar-nav .topbar-user .profile-pic .profile-username {
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+}
+
+/* Avatar di navbar - tetap konsisten */
+.navbar .navbar-nav .topbar-user .profile-pic .avatar-sm {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.navbar .navbar-nav .topbar-user .profile-pic .avatar-sm .avatar-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+/* User box di dropdown - avatar tetap konsisten */
+.user-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 16px 20px;
+}
+
+.user-box .avatar-lg {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+}
+
+.user-box .avatar-lg .avatar-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.user-box .u-text {
+    flex: 1;
+    min-width: 0;
+    align-content: center;
+}
+
+.user-box .u-text h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: #29343d;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.3;
+}
+
+.user-box .u-text .text-muted {
+    font-size: 13px;
+    margin: 0;
+    color: #6c757d;
+}
+
+/* Responsive untuk layar kecil */
+@media (max-width: 768px) {
+    .navbar .navbar-nav .topbar-user .profile-pic .profile-username {
+        max-width: 120px;
+    }
+}
+
+.dropdown-item {
+    font-size: 15px;
+    color: #575962;
+}
+
+.dropdown-item:focus {
+    color: #575962 !important;
+    background: #f8f9fa !important;
+}
+
+div.dropdown-item {
+    background: transparent !important;
+}
+
+.dropdown-divider {
+    border-top: 1px solid #ebedf2;
+}
+
+/* ========== TOMBOL DAN BUTTON STYLES ========== */
+
+.btn {
+    padding: .6rem 1rem;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.btn-sm {
+    font-size: 14px;
+    padding: 5px 10px !important;
+}
+
+/* Tombol Primary - menggunakan CSS variable untuk tema dinamis */
+.btn-primary {
+    background: var(--primary-color, #14438B) !important;
+    border-color: var(--primary-color, #14438B) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:disabled {
+    color: #ffffff !important;
+    background: var(--primary-dark, #0f3570) !important;
+    border-color: var(--primary-dark, #0f3570) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px var(--primary-shadow, rgba(20, 67, 139, 0.3));
+    transition: all 0.2s ease-in-out;
+}
+
+/* Tombol Outline Primary - menggunakan CSS variable untuk tema dinamis */
+.btn-outline-primary {
+    color: var(--primary-color, #14438B) !important;
+    border-color: var(--primary-color, #14438B) !important;
+    background-color: transparent;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+    color: #ffffff !important;
+    background-color: var(--primary-color, #14438B) !important;
+    border-color: var(--primary-color, #14438B) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px var(--primary-shadow, rgba(20, 67, 139, 0.3));
+}
+
+.btn-outline-primary:disabled {
+    color: var(--primary-color, #14438B) !important;
+    border-color: var(--primary-color, #14438B) !important;
+}
+
+/* Tombol Secondary */
+.btn-secondary {
+    background: #31316a !important;
+    border-color: #31316a !important;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:disabled {
+    color: #ffffff !important;
+    background: #28295a !important;
+    border-color: #28295a !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(49, 49, 106, 0.3);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Tombol Warning */
+.btn-warning {
+    color: #ffffff !important;
+    background: #ffad46 !important;
+    border-color: #ffad46 !important;
+}
+
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:disabled {
+    color: #ffffff !important;
+    background: #e89c3d !important;
+    border-color: #e89c3d !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(255, 173, 70, 0.3);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Tombol Info */
+.btn-info {
+    color: #ffffff !important;
+    background: #48ABF7 !important;
+    border-color: #48ABF7 !important;
+}
+
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:disabled {
+    color: #ffffff !important;
+    background: #369AE7 !important;
+    border-color: #2A8DD7 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(72, 171, 247, 0.3);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Tombol Success */
+.btn-success {
+    color: #ffffff !important;
+    background: #28a745 !important;
+    border-color: #28a745 !important;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:disabled {
+    color: #ffffff !important;
+    background: #218838 !important;
+    border-color: #1e7e34 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Tombol Danger */
+.btn-danger {
+    color: #ffffff !important;
+    background: #dc3545 !important;
+    border-color: #dc3545 !important;
+}
+
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:disabled {
+    color: #ffffff !important;
+    background: #c82333 !important;
+    border-color: #bd2130 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+    transition: all 0.2s ease-in-out;
+}
+
+/* ========== TEKS DAN TYPOGRAPHY ========== */
+
+.text-brand {
+    color: #ee5050 !important;
+}
+
+.text-hash {
+    color: #ee5050 !important;
+    font-size: 20px !important;
+}
+
+/* Teks Primary - menggunakan CSS variable untuk tema dinamis */
+.text-primary,
+.text-primary a {
+    color: var(--primary-color, #14438B) !important;
+}
+
+/* Hapus semua efek hover pada text-primary agar tetap konsisten dengan warna tema */
+.text-primary:hover,
+.text-primary a:hover,
+.text-primary:focus,
+.text-primary a:focus,
+a.text-primary:hover,
+a.text-primary:focus {
+    color: var(--primary-color, #14438B) !important;
+    text-decoration: none !important;
+}
+
+p {
+    font-size: 1rem;
+    color: #29343d;
+}
+
+label {
+    color: #29343d !important;
+    font-size: 1rem !important;
+}
+
+/* ========== CARD STYLING ========== */
+
+.card {
+    --bs-card-spacer-y: 1rem;
+    --bs-card-spacer-x: 1.75rem;
+    border-radius: 12px !important;
+}
+
+.card .card-body {
+    padding: 1.75rem;
+}
+
+.card-category {
+    color: #575962;
+}
+
+.card-stats .icon-big.icon-black,
+.card-stats .icon-big.icon-primary,
+.card-stats .icon-big.icon-secondary,
+.card-stats .icon-big.icon-success,
+.card-stats .icon-big.icon-info,
+.card-stats .icon-big.icon-warning,
+.card-stats .icon-big.icon-danger {
+    border-radius: 10px;
+}
+
+.card-stats .icon-big.icon-primary {
+    background: #726BFF;
+}
+
+.card-stats .icon-big.icon-success {
+    background: #36c76c;
+}
+
+.card-stats .icon-big.icon-warning {
+    background: #eab01c;
+}
+
+/* ========== BREADCRUMB DAN NAVIGASI ========== */
+
+.breadcrumb-item .badge {
+    border-radius: 6px;
+    font-size: 13px !important;
+    padding: 5px 10px;
+    font-weight: 600;
+    border: none;
+}
+
+/* ========== ALERT DAN NOTIFIKASI ========== */
+
+.alert {
+    padding: 16px 18px;
+    border-radius: 12px;
+    color: #29343d !important;
+    box-shadow: none;
+}
+
+.alert-title {
+    margin-bottom: 40px;
+}
+
+.alert-secondary {
+    background-color: #f4f7fb !important;
+    border: 1px solid #eef5fd !important;
+    border-left: none;
+}
+
+/* Alert Primary - menggunakan CSS variable untuk tema dinamis */
+.alert-primary {
+    color: var(--primary-color, #14438B) !important;
+    background-color: var(--primary-light, #dddbff) !important;
+    border: 1px solid var(--primary-subtle, #c1bdff) !important;
+    border-left: none;
+}
+
+.alert-success {
+    color: #36c76c !important;
+    background-color: #ebfaf0 !important;
+    border: 1px solid #cbf4da !important;
+    border-left: none;
+}
+
+.alert-danger {
+    color: #ff6692 !important;
+    background-color: #ffccbd !important;
+    border: 1px solid #ffc2d3 !important;
+    border-left: none;
+}
+
+.alert-warning {
+    color: #e89c3d !important; 
+    background-color: #fff7e9 !important; 
+    border: 1px solid #ffe6bf !important;
+    border-left: none;
+}
+
+.alert-info {
+    color: #369AE7 !important; 
+    background-color: #e9f6ff !important; 
+    border: 1px solid #cfeeff !important;
+    border-left: none;
+}
+
+.alert-light {
+    color: #697a8d !important;
+    background-color: #f9fbfd !important;
+    border: 1px solid #eef5fd !important;
+    border-left: none;
+}
+
+.alert-dark {
+    color: #29343d !important;
+    background-color: #e9ecef !important;
+    border: 1px solid #d6dbe1 !important;
+    border-left: none;
+}
+
+/* ========== FORM DAN INPUT STYLING ========== */
+
+.form-control {
+    color: #29343d !important;
+    border-color: #e0e6eb;
+    padding: .6rem 1rem;
+    border-width: 1px;
+    border-radius: 8px;
+}
+
+/* Form Control Focus - menggunakan CSS variable untuk tema dinamis */
+.form-control:focus {
+    border-color: var(--primary-color, #14438B);
+}
+
+.form-select {
+    color: #29343d !important;
+    border-color: #e0e6eb;
+    padding: .6rem 1rem;
+    border-radius: 8px;
+}
+
+/* Form Select Focus - menggunakan CSS variable untuk tema dinamis */
+.form-select:focus {
+    border-color: var(--primary-color, #14438B);
+}
+
+.form-text {
+    margin-top: .75rem;
+    font-size: 13px;
+}
+
+.form-text .badge {
+    font-size: 13px !important;
+    margin-bottom: .5rem;
+}
+
+.invalid-feedback {
+    font-size: 14px;
+}
+
+/* ========== CUSTOM COLOR PICKER UNTUK TEMA ========== */
+.preset-colors {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.preset-color-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid #e0e6eb;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preset-color-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    outline: 2px solid #007bff;
+}
+
+.custom-color-picker-wrapper {
+    position: relative;
+}
+
+.custom-color-display {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #e0e6eb;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.custom-color-display:hover {
+    border-color: var(--primary-color, #14438B);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.custom-color-display .color-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+    backdrop-filter: blur(2px);
+}
+
+.custom-color-display.is-invalid {
+    border-color: #dc3545;
+}
+
+.custom-color-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    border: none;
+}
+
+.custom-color-input::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+}
+
+.custom-color-input::-webkit-color-swatch {
+    border: none;
+    border-radius: 0;
+}
+
+.custom-color-input::-moz-color-swatch {
+    border: none;
+    border-radius: 0;
+}
+
+/* ========== TABEL STYLING ========== */
+
+.table {
+    --bs-table-color: #29343d;
+}
+
+.table thead th {
+    text-transform: none;
+    padding: 14px 24px !important;
+}
+
+.table td,
+.table th {
+    font-size: 14px;
+    border-color: rgba(17, 28, 45, 0.0509803922) !important;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th {
+    padding: 14px 24px !important;
+}
+
+/* ========== PAGINATION STYLING ========== */
+
+.pagination>li>a,
+.pagination>li:first-child>a,
+.pagination>li:last-child>a,
+.pagination>li>span,
+.pagination>li:first-child>span,
+.pagination>li:last-child>span {
+    border-radius: 10px !important;
+    margin: 0 2px;
+    color: #29343d;
+    border-color: #e0e6eb;
+}
+
+/* Pagination Hover - menggunakan CSS variable untuk tema dinamis */
+.pagination>li>a:hover,
+.pagination>li:first-child>a:hover,
+.pagination>li:last-child>a:hover,
+.pagination>li>span:hover,
+.pagination>li:first-child>span:hover,
+.pagination>li:last-child>span:hover {
+    color: #ffffff;
+    background-color: var(--primary-color, #14438B);
+    border-color: var(--primary-color, #14438B);
+}
+
+.page-item {
+    margin-left: 5px;
+}
+
+.page-link {
+    padding: 5px 12px;
+}
+
+/* Pagination Active - menggunakan CSS variable untuk tema dinamis */
+.page-link.active,
+.active>.page-link {
+    background-color: var(--primary-color, #14438B);
+    border-color: var(--primary-color, #14438B);
+}
+
+.page-link.disabled,
+.disabled>.page-link {
+    color: #697a8d !important;
+    background-color: #ebedf2;
+}
+
+.pagination-links p {
+    font-size: 15px;
+}
+
+/* ========== MODAL STYLING ========== */
+
+.modal-content {
+    border-radius: 12px;
+}
+
+.modal-header {
+    border-bottom: 1px solid #e0e6eb;
+}
+
+.modal-title {
+    color: #29343d;
+    font-size: 17px;
+}
+
+.modal-footer {
+    border-top: 1px solid #e0e6eb;
+}
+
+/* ========== FLATPICKR DATE PICKER STYLING ========== */
+
+/* Flatpickr hover dan focus - menggunakan CSS variable untuk tema dinamis */
+.flatpickr-day.inRange,
+.flatpickr-day.prevMonthDay.inRange,
+.flatpickr-day.nextMonthDay.inRange,
+.flatpickr-day.today.inRange,
+.flatpickr-day.prevMonthDay.today.inRange,
+.flatpickr-day.nextMonthDay.today.inRange,
+.flatpickr-day:hover,
+.flatpickr-day.prevMonthDay:hover,
+.flatpickr-day.nextMonthDay:hover,
+.flatpickr-day:focus,
+.flatpickr-day.prevMonthDay:focus,
+.flatpickr-day.nextMonthDay:focus {
+    cursor: pointer;
+    outline: 0;
+    background: var(--primary-color, #14438B);
+    border-color: var(--primary-color, #14438B);
+    color: #fff;
+}
+
+.flatpickr-day.today {
+    border-color: var(--primary-color, #14438B);
+}
+
+.flatpickr-day.today:hover,
+.flatpickr-day.today:focus {
+    border-color: var(--primary-color, #14438B);
+    background: var(--primary-color, #14438B);
+    color: #fff;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected.inRange,
+.flatpickr-day.startRange.inRange,
+.flatpickr-day.endRange.inRange,
+.flatpickr-day.selected:focus,
+.flatpickr-day.startRange:focus,
+.flatpickr-day.endRange:focus,
+.flatpickr-day.selected:hover,
+.flatpickr-day.startRange:hover,
+.flatpickr-day.endRange:hover,
+.flatpickr-day.selected.prevMonthDay,
+.flatpickr-day.startRange.prevMonthDay,
+.flatpickr-day.endRange.prevMonthDay,
+.flatpickr-day.selected.nextMonthDay,
+.flatpickr-day.startRange.nextMonthDay,
+.flatpickr-day.endRange.nextMonthDay {
+    background: var(--primary-color, #14438B);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #fff;
+    border-color: var(--primary-color, #14438B);
+}
+
+.flatpickr-day.selected.startRange+.endRange:not(:nth-child(7n+1)),
+.flatpickr-day.startRange.startRange+.endRange:not(:nth-child(7n+1)),
+.flatpickr-day.endRange.startRange+.endRange:not(:nth-child(7n+1)) {
+    -webkit-box-shadow: -10px 0 0 var(--primary-color, #14438B);
+    box-shadow: -10px 0 0 var(--primary-color, #14438B);
+}
+
+.flatpickr-day.week.selected {
+    border-radius: 0;
+    -webkit-box-shadow: -5px 0 0 var(--primary-color, #14438B), 5px 0 0 var(--primary-color, #14438B);
+    box-shadow: -5px 0 0 var(--primary-color, #14438B), 5px 0 0 var(--primary-color, #14438B);
+}
+
+.flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month:hover {
+    background: var(--primary-color, #14438B) !important;
+}
+
+/* ========== SELECT2 STYLING ========== */
+
+select+.select2-container {
+    width: 100% !important;
+}
+
+.select2-container .select2-selection--single {
+    height: 42px;
+    outline: none;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding-left: 15px;
+    padding-right: 35px;
+}
+
+.select2-container .select2-selection--multiple .select2-selection__rendered {
+    display: inline-block;
+    overflow: hidden;
+    padding-left: 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.select2-dropdown {
+    border: 1px solid #e0e6eb;
+    border-radius: 8px;
+    z-index: 1056;
+}
+
+.select2-results__options {
+    margin: 0 0 10px;
+    padding: 0 16px;
+}
+
+.select2-results__option {
+    color: #29343d !important;
+}
+
+.select2-search--dropdown {
+    padding: 20px 16px 10px;
+}
+
+.select2-container--default .select2-selection--single {
+    border: 1px solid #e0e6eb;
+    border-radius: 8px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #29343d;
+    line-height: 41px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 41px;
+    right: 10px;
+}
+
+.select2-container--default .select2-selection--multiple {
+    border-radius: 8px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    border-radius: 8px;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    color: #29343d;
+    border: 1px solid #e0e6eb;
+    border-radius: 8px;
+    padding: 13px;
+    height: 40px;
+    outline: none;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field:focus {
+    outline: none;
+}
+
+.select2-container--classic .select2-selection--single {
+    border-radius: 8px;
+}
+
+.select2-container--classic .select2-selection--single .select2-selection__rendered {
+    color: #29343d;
+}
+
+.select2-container--classic .select2-selection--multiple {
+    border-radius: 8px;
+}
+
+.select2-container--classic .select2-selection--multiple .select2-selection__choice {
+    border-radius: 8px;
+}
+
+.select2-container--default .select2-results__option--selected {
+    background-color: #f4f7fb;
+    border-radius: 6px;
+    padding: 7px 13px;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: var(--primary-color, #14438B);
+    color: #ffffff !important;
+    border-radius: 6px;
+    padding: 7px 13px;
+}
+
+select.select2-hidden-accessible.is-invalid+.select2 .select2-selection {
+    border-color: #dc3545;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(1.9em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.rounded {
+    border-radius: 12px !important;
+}
+
+.border {
+    border: 1px solid #e0e6eb !important;
+}
+
+.border-bottom,
+.border-left,
+.border-right,
+.border-top {
+    border-color: #e0e6eb !important;
+}
+
+.invalid-feedback {
+    font-size: 14px;
+}
+
+.icon-file {
+    font-size: 90px !important;
+}
+
+.report-title {
+    color: #29343d !important;
+    font-size: 1rem;
+}
+
+.about-title {
+    color: #29343d !important;
+    font-size: 17px !important;
+}
+
+.mb-n25 {
+    margin-bottom: -25px !important;
+}
+
+.footer {
+    border-top: 0;
+}
+
+/* ========== KATA KUNCI TAGS ========== */
+
+#kata_kunci_container span {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--primary-color, #14438B);
+    color: #ffffff;
+    padding: 2px 8px;
+    margin: 1px 4px 1px 0;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    word-break: break-word;
+    max-width: 100%;
+}
+
+#kata_kunci_container button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    margin-left: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.15s ease;
+}
+
+#kata_kunci_container button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#kata_kunci_input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+}
+
+#kata_kunci_wrapper:focus-within {
+    border-color: var(--primary-color, #14438B);
+}
+
+/* ========== Multi-Select Dropdown Styles ========== */
+.multi-select-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.multi-select-toggle {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #e0e6eb;
+    border-radius: 8px;
+    background-color: #ffffff;
+    cursor: pointer;
+    min-height: 42px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.multi-select-toggle:hover {
+    border-color: var(--primary-color, #14438B);
+}
+
+.multi-select-toggle:focus,
+.multi-select-toggle:focus-within {
+    border-color: var(--primary-color, #14438B);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(177, 173, 255, 0.25);
+}
+
+.multi-select-toggle.is-invalid {
+    border-color: #dc3545;
+}
+
+.multi-select-placeholder {
+    color: #6c757d;
+    line-height: 1.5;
+}
+
+.multi-select-selected-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    flex: 1;
+    align-items: flex-start;
+    min-height: 20px;
+}
+
+.multi-select-item {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--primary-color, #14438B);
+    color: #ffffff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin: 1px 0;
+    word-break: break-word;
+    max-width: 100%;
+}
+
+.multi-select-item-remove {
+    margin-left: 4px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.15s ease;
+}
+
+.multi-select-item-remove:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.multi-select-arrow {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+    margin-top: 1px;
+    color: #6c757d;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.multi-select-arrow::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #6c757d;
+}
+
+.multi-select-dropdown.open .multi-select-arrow::after {
+    border-top: none;
+    border-bottom: 5px solid #6c757d;
+}
+
+.multi-select-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border: 1px solid #e0e6eb;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1056;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 2px;
+    display: none;
+}
+
+.multi-select-dropdown.open .multi-select-dropdown-menu {
+    display: block;
+}
+
+.multi-select-search {
+    padding: 20px 16px 10px;
+    border-bottom: 1px solid #e0e6eb;
+}
+
+.multi-select-search input {
+    width: 100%;
+    border: 1px solid #e0e6eb;
+    border-radius: 8px;
+    padding: 13px;
+    height: 40px;
+    outline: none;
+    color: #29343d;
+}
+
+.multi-select-search input:focus {
+    border-color: var(--primary-color, #14438B);
+    outline: none;
+}
+
+.multi-select-options {
+    margin: 0 0 10px;
+    padding: 0 16px;
+}
+
+.multi-select-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 13px;
+    cursor: pointer;
+    color: #29343d;
+    transition: background-color 0.15s ease;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    border-radius: 6px;
+    margin: 2px 0;
+}
+
+.multi-select-option:hover {
+    background-color: #f4f7fb;
+}
+
+.multi-select-option.selected {
+    background-color: var(--primary-color, #14438B);
+    color: #ffffff;
+}
+
+.multi-select-option-text {
+    flex: 1;
+}
+
+.multi-select-option-check {
+    margin-left: 8px;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.multi-select-option.selected .multi-select-option-check {
+    opacity: 1;
+}
+
+.multi-select-no-results {
+    padding: 12px 16px;
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+    font-size: 0.875rem;
+}
+
+/* Animation untuk dropdown */
+.multi-select-dropdown-menu {
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .multi-select-item {
+        font-size: 0.8rem;
+        padding: 1px 6px;
+    }
+    
+    .multi-select-dropdown-menu {
+        max-height: 250px;
+    }
+}
+
+/* ========== NOTIFICATION DROPDOWN STYLES ========== */
+
+/* ========== FILE INFO CALLOUT - menggunakan CSS variable untuk tema dinamis ========== */
+.file-info-callout {
+    border: 1px solid var(--primary-dark, #0f3164); 
+    background-color: var(--primary-color, #14438B); 
+    border-radius: 12px;
+    padding: 14px 16px;
+}
+
+.file-info-callout .callout-title {
+    color: #ffffff; 
+    font-weight: 600;
+}
+
+.info-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 13px;
+    background-color: #ffffff; 
+    border: 1px solid var(--primary-dark, #0f3164); 
+    color: var(--primary-color, #14438B); 
+}
+
+.info-chip .ti {
+    font-size: 15px;
+    color: var(--primary-color, #14438B); 
+}
+
+/* ========== Notification Dropdown Styles ========== */
+.topbar-icon {
+    position: relative;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    font-size: 0.65rem;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.notifications-dropdown {
+    width: 380px !important;
+    /* Use a CSS variable so children can size responsively */
+    --notif-dd-maxh: 450px;
+    max-height: var(--notif-dd-maxh);
+    border: 1px solid #e0e6eb;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+    padding: 0 !important;
+    margin-top: 8px !important;
+    overflow: hidden;
+}
+
+.notifications-dropdown .dropdown-user-scroll {
+    /* Constrain to the dropdown max height and let the list inside scroll */
+    max-height: var(--notif-dd-maxh);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.notification-header {
+    border-bottom: 1px solid #e0e6eb !important;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.notification-header .d-flex {
+    padding: 16px 20px !important;
+}
+
+.notification-header h6 {
+    color: #29343d !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+}
+
+.notification-list {
+    padding: 0 !important;
+    margin: 0 !important;
+    /* Make list the only scroll area so header/footer stay visible */
+    flex: 1 1 auto;
+    overflow-y: auto;
+    min-height: 0; /* allow flex child to shrink for scrolling */
+}
+
+.notification-item {
+    padding: 16px 20px !important;
+    border-bottom: 1px solid #f1f3f4;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    margin: 0 !important;
+    background: #ffffff;
+    display: block !important;
+    position: relative !important; /* Parent sebagai reference untuk absolute positioning */
+}
+
+.notification-item:hover {
+    background-color: #f8f9fa !important;
+}
+
+.notification-item.unread {
+    border-left: 3px solid #14438B;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item .btn-link {
+    position: absolute !important;
+    top: 16px !important; /* Sama dengan padding-top notification-item */
+    right: 20px !important; /* Sama dengan padding-right notification-item */
+    width: 24px !important;
+    height: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 20px !important;
+    line-height: 1 !important;
+    opacity: 0.6;
+    transition: all 0.2s ease;
+    border-radius: 4px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+.notification-item .btn-link:hover {
+    opacity: 1 !important;
+    background-color: rgba(220, 53, 69, 0.1) !important;
+    color: #dc3545 !important;
+}
+
+.notification-content {
+    flex: 1;
+    min-width: 0;
+    padding-right: 30px; /* Beri ruang untuk tombol hapus */
+}
+
+.notification-title {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    margin-bottom: 4px !important;
+    color: #29343d !important;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.notification-message {
+    font-size: 13px !important;
+    color: #6c757d !important;
+    margin-bottom: 6px !important;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.notification-time {
+    font-size: 11px !important;
+    color: #9e9e9e !important;
+    font-weight: 500;
+}
+
+.notification-time .ti {
+    font-size: 12px !important;
+    margin-right: 2px;
+}
+
+.notification-actions {
+    display: flex;
+    gap: 4px;
+    align-items: flex-start;
+    margin-left: 12px;
+}
+
+.notification-actions .btn {
+    width: 28px !important;
+    height: 28px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 6px !important;
+}
+
+.notification-actions .btn .ti {
+    font-size: 14px !important;
+}
+
+.notification-item .avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #14438B;
+    color: #ffffff;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.notification-item .avatar.bg-success {
+    background-color: #28a745 !important;
+}
+
+.notification-item .avatar.bg-warning {
+    background-color: #ffc107 !important;
+    color: #ffffff !important;
+}
+
+.notification-item .avatar.bg-info {
+    background-color: #17a2b8 !important;
+}
+
+.notification-item .avatar.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+.notification-item .avatar.bg-purple {
+    background-color: #6f42c1 !important;
+}
+
+.notification-item .avatar.bg-warning-dark {
+    background-color: #e6a717 !important;
+    color: #ffffff !important;
+}
+
+/* Additional Bootstrap color classes for notifications */
+.bg-purple {
+    background-color: #6f42c1 !important;
+}
+
+.bg-warning-dark {
+    background-color: #e6a717 !important;
+}
+
+.badge.bg-purple {
+    background-color: #6f42c1 !important;
+    color: #ffffff !important;
+}
+
+.badge.bg-warning-dark {
+    background-color: #e6a717 !important;
+    color: #ffffff !important;
+}
+
+.avatar.bg-purple {
+    background-color: #6f42c1 !important;
+    color: #ffffff !important;
+}
+
+/* Pastikan semua avatar dengan background warna memiliki teks putih */
+.avatar.bg-primary,
+.avatar.bg-secondary,
+.avatar.bg-success,
+.avatar.bg-danger,
+.avatar.bg-warning,
+.avatar.bg-warning-dark,
+.avatar.bg-info,
+.avatar.bg-light,
+.avatar.bg-dark,
+.avatar.bg-purple {
+    color: #ffffff !important;
+}
+
+/* Khusus untuk bg-light yang perlu teks gelap */
+.avatar.bg-light {
+    color: #212529 !important;
+}
+
+/* Override untuk notification items agar konsisten */
+.notification-item .avatar,
+.notification-item .avatar i {
+    color: #ffffff !important;
+}
+
+.notification-item .avatar.bg-light,
+.notification-item .avatar.bg-light i {
+    color: #212529 !important;
+}
+
+/* Empty state styling */
+.notifications-dropdown .text-center {
+    padding: 30px 20px !important;
+}
+
+.notifications-dropdown .text-center .ti {
+    font-size: 48px !important;
+    color: #dee2e6 !important;
+    margin-bottom: 12px;
+}
+
+.notifications-dropdown .text-center p {
+    color: #6c757d !important;
+    font-size: 14px !important;
+    margin: 0 !important;
+}
+
+/* Loading state */
+.spinning {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Scrollbar styling for dropdown */
+.dropdown-user-scroll::-webkit-scrollbar {
+    width: 4px;
+}
+
+.dropdown-user-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.dropdown-user-scroll::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.dropdown-user-scroll::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Sticky footer in notification dropdown */
+.notifications-dropdown .sticky-bottom {
+    position: sticky;
+    bottom: 0;
+}
+
+.notifications-dropdown .notification-footer .btn {
+    font-size: 14px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+/* Tighter footer container (not the button) */
+.notifications-dropdown .notification-footer > .p-2 {
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
+}
+
+.notifications-dropdown .notification-item {
+    display: flex !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .notifications-dropdown {
+        width: 320px !important;
+        --notif-dd-maxh: 350px; /* shrink dropdown responsibly on small screens */
+        max-height: var(--notif-dd-maxh);
+    }
+    
+    .notification-item {
+        padding: 12px 16px !important;
+    }
+    
+    .notification-header .d-flex {
+        padding: 12px 16px !important;
+    }
+    
+    .notification-actions .btn {
+        width: 24px !important;
+        height: 24px !important;
+    }
+    
+    .notification-item .avatar {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+}
+
+/* Extra-narrow screens: keep dropdown within viewport width */
+@media (max-width: 360px) {
+    .notifications-dropdown {
+        width: calc(100vw - 16px) !important;
+    }
+}
+
+/* Remove underline from delete 'x' button in notification items */
+.notifications-dropdown .notification-item .btn-link,
+.notifications-dropdown .notification-item .btn-link:hover,
+.notifications-dropdown .notification-item .btn-link:focus {
+    text-decoration: none !important;
+}

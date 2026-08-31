@@ -1,0 +1,22 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "laravel": "concurrently --names \"SERVE,REVERB,QUEUE\" --prefix-colors \"blue,green,yellow\" \"php artisan serve\" \"php artisan reverb:start\" \"php artisan queue:work\"",
+        "laravel:serve": "php artisan serve",
+        "laravel:reverb": "php artisan reverb:start",
+        "laravel:queue": "php artisan queue:work"
+    },
+    "devDependencies": {
+        "axios": "^1.6.4",
+        "concurrently": "^9.2.1",
+        "laravel-vite-plugin": "^1.0",
+        "vite": "^5.0"
+    },
+    "dependencies": {
+        "laravel-echo": "^2.2.0",
+        "pusher-js": "^8.4.0"
+    }
+}

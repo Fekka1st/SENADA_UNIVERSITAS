@@ -1,0 +1,543 @@
+<?php if (isset($component)) { $__componentOriginal9ac128a9029c0e4701924bd2d73d7f54 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal9ac128a9029c0e4701924bd2d73d7f54 = $attributes; } ?>
+<?php $component = App\View\Components\AppLayout::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('app-layout'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\App\View\Components\AppLayout::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+     <?php $__env->slot('title', null, []); ?> Manajemen User <?php $__env->endSlot(); ?>
+     <?php $__env->slot('breadcrumb', null, []); ?> Edit <?php $__env->endSlot(); ?>
+
+    <div class="card shadow-sm">
+        <div class="card-body p-4">
+            
+            <?php if (isset($component)) { $__componentOriginal5194778a3a7b899dcee5619d0610f5cf = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal5194778a3a7b899dcee5619d0610f5cf = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.alert','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('alert'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?> <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal5194778a3a7b899dcee5619d0610f5cf)): ?>
+<?php $attributes = $__attributesOriginal5194778a3a7b899dcee5619d0610f5cf; ?>
+<?php unset($__attributesOriginal5194778a3a7b899dcee5619d0610f5cf); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal5194778a3a7b899dcee5619d0610f5cf)): ?>
+<?php $component = $__componentOriginal5194778a3a7b899dcee5619d0610f5cf; ?>
+<?php unset($__componentOriginal5194778a3a7b899dcee5619d0610f5cf); ?>
+<?php endif; ?>
+
+            
+            <form action="<?php echo e(route('user.update', $user->id)); ?>" method="POST" enctype="multipart/form-data">
+                <?php echo csrf_field(); ?>
+                <?php echo method_field('PUT'); ?>
+                <div class="row g-4">
+
+                    
+                    <div class="col-lg-4">
+                        <div class="card border bg-light">
+                            <div class="card-body text-center">
+                                <h6 class="card-subtitle mb-3 text-primary">
+                                    <i class="ti ti-camera me-1"></i> Preview Foto
+                                </h6>
+
+                                <div class="position-relative d-inline-block mb-3">
+                                    <?php
+                                        $previewPath = safe_image_url($user->foto, 'foto_user', 'images/avatar.png');
+                                    ?>
+                                    <img id="previewFoto" src="<?php echo e($previewPath); ?>"
+                                        class="img-thumbnail rounded-circle shadow" width="180" height="180"
+                                        style="object-fit: cover; border: 4px solid #fff;" alt="Foto User">
+                                </div>
+
+                                
+                                <h5 class="mb-2"><?php echo e($user->nama_user); ?></h5>
+
+                                <span class="badge bg-primary-subtle text-primary px-3 py-2">
+                                    <i class="ti ti-shield-check me-1"></i>
+                                    <?php echo e($user->roleModel->nama ?? 'User'); ?>
+
+                                </span>
+
+                                
+                                <?php if($user->foto): ?>
+                                    <div class="mt-3">
+                                        <div
+                                            class="form-check form-switch d-flex justify-content-center align-items-center gap-2">
+                                            <input class="form-check-input m-0" type="checkbox" name="hapus_foto"
+                                                id="hapusFoto" value="1" style="cursor: pointer;">
+                                            <label class="form-check-label text-danger fw-semibold m-0" for="hapusFoto"
+                                                style="cursor: pointer; line-height: 1.5;">
+                                                <i class="ti ti-trash fs-6 me-1"></i> Hapus Foto
+                                            </label>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="col-lg-8">
+                        <div class="card border">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-4 text-primary">
+                                    <i class="ti ti-forms me-1"></i> Data Pengguna
+                                </h6>
+
+                                <div class="row">
+                                    
+                                    <div class="col-lg-6">
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label fw-semibold">
+                                                <i class="ti ti-user me-1"></i> Nama Lengkap
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="text" name="nama_user"
+                                                value="<?php echo e(old('nama_user', $user->nama_user)); ?>"
+                                                class="form-control <?php $__errorArgs = ['nama_user'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>"
+                                                placeholder="Masukkan nama lengkap" autocomplete="off">
+                                            <?php $__errorArgs = ['nama_user'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                                <div class="invalid-feedback"><?php echo e($message); ?></div>
+                                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                        </div>
+
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label fw-semibold">
+                                                <i class="ti ti-at me-1"></i> Username
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="text" name="username"
+                                                value="<?php echo e(old('username', $user->username)); ?>"
+                                                class="form-control <?php $__errorArgs = ['username'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>"
+                                                placeholder="Masukkan username" autocomplete="off">
+                                            <?php $__errorArgs = ['username'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                                <div class="invalid-feedback"><?php echo e($message); ?></div>
+                                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                        </div>
+
+                                        
+                                        <div class="mb-0">
+                                            <label class="form-label fw-semibold">
+                                                <i class="ti ti-shield-check me-1"></i> Role
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <select name="role"
+                                                class="form-select select2-single <?php $__errorArgs = ['role'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>"
+                                                autocomplete="off">
+                                                <option disabled value="">- Pilih Role -</option>
+                                                <?php $__currentLoopData = $role; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $roleItem): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <option value="<?php echo e($roleItem->id); ?>"
+                                                        <?php echo e(old('role', $user->role) == $roleItem->id ? 'selected' : ''); ?>>
+                                                        <?php echo e($roleItem->nama); ?>
+
+                                                    </option>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                            </select>
+                                            <?php $__errorArgs = ['role'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                                <div class="invalid-feedback"><?php echo e($message); ?></div>
+                                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                        </div>
+                                    </div>
+
+                                    
+                                    <div class="col-lg-6">
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label fw-semibold">
+                                                <i class="ti ti-lock me-1"></i> Password
+                                            </label>
+                                            <div class="input-group">
+                                                <input type="password" name="password" id="password"
+                                                    class="form-control toggle-password <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>"
+                                                    placeholder="Kosongkan jika tidak diubah"
+                                                    autocomplete="new-password">
+                                                <span class="input-group-text bg-white toggle-password-btn"
+                                                    style="cursor: pointer;">
+                                                    <i class="ti ti-eye"></i>
+                                                </span>
+                                            </div>
+                                            <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                                <div class="invalid-feedback d-block"><?php echo e($message); ?></div>
+                                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                            <div class="form-text">
+                                                <i class="ti ti-info-circle me-1"></i>
+                                                Kosongkan jika tidak ingin mengubah password
+                                            </div>
+
+                                            <!-- Indikator kekuatan password -->
+                                            <div id="password-strength" class="mt-2" style="display: none;">
+                                                <div class="progress" style="height: 8px;">
+                                                    <div id="password-strength-bar" class="progress-bar"
+                                                        role="progressbar" style="width: 0%"></div>
+                                                </div>
+                                                <small id="password-strength-text" class="text-muted"></small>
+                                            </div>
+
+                                            <!-- Checklist validasi password -->
+                                            <div id="password-checklist" class="mt-2" style="display: none;">
+                                                <small>
+                                                    <div id="length-check" class="text-muted">
+                                                        <i class="ti ti-x text-danger"></i> Minimal 8 karakter
+                                                    </div>
+                                                    <div id="uppercase-check" class="text-muted">
+                                                        <i class="ti ti-x text-danger"></i> Huruf besar (A-Z)
+                                                    </div>
+                                                    <div id="lowercase-check" class="text-muted">
+                                                        <i class="ti ti-x text-danger"></i> Huruf kecil (a-z)
+                                                    </div>
+                                                    <div id="number-check" class="text-muted">
+                                                        <i class="ti ti-x text-danger"></i> Angka (0-9)
+                                                    </div>
+                                                    <div id="symbol-check" class="text-muted">
+                                                        <i class="ti ti-x text-danger"></i> Simbol (!@#$%^&*)
+                                                    </div>
+                                                </small>
+                                            </div>
+                                        </div>
+
+                                        
+                                        <div class="mb-0">
+                                            <label class="form-label fw-semibold">
+                                                <i class="ti ti-photo me-1"></i> Foto User
+                                            </label>
+                                            <input type="file" name="foto"
+                                                class="form-control <?php $__errorArgs = ['foto'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>"
+                                                accept=".jpg,.jpeg,.png" onchange="previewImage(event, 'previewFoto')"
+                                                id="fotoInput">
+                                            <?php $__errorArgs = ['foto'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                                <div class="invalid-feedback"><?php echo e($message); ?></div>
+                                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                            <div class="form-text">
+                                                <i class="ti ti-info-circle me-1"></i>
+                                                Format: JPG, JPEG, PNG. Maksimal 2MB
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                
+                <?php if (isset($component)) { $__componentOriginal2720027075619929b6f895eb46dac441 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal2720027075619929b6f895eb46dac441 = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.page-action-buttons','data' => ['route' => 'user']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('page-action-buttons'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes(['route' => 'user']); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal2720027075619929b6f895eb46dac441)): ?>
+<?php $attributes = $__attributesOriginal2720027075619929b6f895eb46dac441; ?>
+<?php unset($__attributesOriginal2720027075619929b6f895eb46dac441); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal2720027075619929b6f895eb46dac441)): ?>
+<?php $component = $__componentOriginal2720027075619929b6f895eb46dac441; ?>
+<?php unset($__componentOriginal2720027075619929b6f895eb46dac441); ?>
+<?php endif; ?>
+            </form>
+        </div>
+    </div>
+
+    
+    <?php if($user->foto): ?>
+        <div class="modal fade" id="modalHapusFoto" data-bs-backdrop="static" data-bs-keyboard="false"
+            tabindex="-1" aria-labelledby="modalHapusFotoLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title" id="modalHapusFotoLabel">
+                            <i class="ti ti-trash me-1"></i> Hapus Foto User
+                        </h1>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <p class="mb-2">
+                            Yakin ingin menghapus foto user? Foto akan diganti dengan gambar default.
+                        </p>
+                        <div class="text-center mb-3">
+                            <img src="<?php echo e(safe_image_url($user->foto, 'foto_user', 'images/avatar.png')); ?>"
+                                alt="Foto User" class="img-thumbnail rounded-circle" width="100" height="100"
+                                style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Batal</button>
+                        <button type="button" class="btn btn-danger" id="btnKonfirmasiHapusFoto">Ya, Hapus
+                            Foto!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+
+    
+    <script>
+        // Preview image function
+        function previewImage(event, previewId) {
+            const input = event.target;
+            const preview = document.getElementById(previewId);
+
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const hapusFotoCheckbox = document.getElementById('hapusFoto');
+            const fotoInput = document.querySelector('input[name="foto"]');
+            const previewImg = document.getElementById('previewFoto');
+
+            // Modal konfirmasi hapus foto
+            const modalHapusFoto = document.getElementById('modalHapusFoto');
+            const btnKonfirmasiHapusFoto = document.getElementById('btnKonfirmasiHapusFoto');
+            let bootstrapModalHapusFoto;
+
+            if (modalHapusFoto) {
+                bootstrapModalHapusFoto = new bootstrap.Modal(modalHapusFoto);
+            }
+
+            if (hapusFotoCheckbox) {
+                hapusFotoCheckbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        // Reset file input dan preview ke default
+                        fotoInput.value = '';
+                        previewImg.src = '<?php echo e(asset('images/avatar.png')); ?>';
+
+                        // Tampilkan modal konfirmasi
+                        if (bootstrapModalHapusFoto) {
+                            bootstrapModalHapusFoto.show();
+                        }
+                    }
+                });
+            }
+
+            // Handler untuk tombol konfirmasi hapus foto
+            if (btnKonfirmasiHapusFoto) {
+                btnKonfirmasiHapusFoto.addEventListener('click', function() {
+                    // Tutup modal
+                    bootstrapModalHapusFoto.hide();
+                    // Checkbox tetap checked karena user sudah konfirmasi
+                });
+            }
+
+            // Handler untuk modal dibatalkan
+            if (modalHapusFoto) {
+                modalHapusFoto.addEventListener('hidden.bs.modal', function() {
+                    // Jika modal ditutup tanpa konfirmasi, uncheck checkbox dan restore preview
+                    if (hapusFotoCheckbox && hapusFotoCheckbox.checked && !this.wasConfirmed) {
+                        hapusFotoCheckbox.checked = false;
+                        // Restore preview image ke foto asli
+                        previewImg.src =
+                            '<?php echo e(safe_image_url($user->foto, 'foto_user', 'images/avatar.png')); ?>';
+                    }
+                    this.wasConfirmed = false;
+                });
+
+                // Tandai bahwa modal dikonfirmasi
+                if (btnKonfirmasiHapusFoto) {
+                    btnKonfirmasiHapusFoto.addEventListener('click', function() {
+                        modalHapusFoto.wasConfirmed = true;
+                    });
+                }
+            }
+
+            // Jika admin upload foto baru, uncheck hapus foto
+            if (fotoInput) {
+                fotoInput.addEventListener('change', function() {
+                    if (this.files.length > 0 && hapusFotoCheckbox) {
+                        hapusFotoCheckbox.checked = false;
+                    }
+                });
+            }
+
+            // Script untuk validasi password real-time
+            const passwordInput = document.getElementById('password');
+            const passwordStrength = document.getElementById('password-strength');
+            const passwordStrengthBar = document.getElementById('password-strength-bar');
+            const passwordStrengthText = document.getElementById('password-strength-text');
+            const passwordChecklist = document.getElementById('password-checklist');
+
+            if (passwordInput) {
+                passwordInput.addEventListener('input', function() {
+                    const password = this.value;
+
+                    if (password.length > 0) {
+                        passwordStrength.style.display = 'block';
+                        passwordChecklist.style.display = 'block';
+                        validatePassword(password);
+                    } else {
+                        passwordStrength.style.display = 'none';
+                        passwordChecklist.style.display = 'none';
+                    }
+                });
+            }
+
+            function validatePassword(password) {
+                let score = 0;
+                const checks = {
+                    length: password.length >= 8,
+                    uppercase: /[A-Z]/.test(password),
+                    lowercase: /[a-z]/.test(password),
+                    number: /[0-9]/.test(password),
+                    symbol: /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~`]/.test(password)
+                };
+
+                // Update checklist visual
+                updateCheck('length-check', checks.length);
+                updateCheck('uppercase-check', checks.uppercase);
+                updateCheck('lowercase-check', checks.lowercase);
+                updateCheck('number-check', checks.number);
+                updateCheck('symbol-check', checks.symbol);
+
+                // Calculate strength score
+                Object.values(checks).forEach(check => {
+                    if (check) score++;
+                });
+
+                // Update strength bar
+                const percentage = (score / 5) * 100;
+                passwordStrengthBar.style.width = percentage + '%';
+
+                // Update strength text and color
+                if (score === 5) {
+                    passwordStrengthBar.className = 'progress-bar bg-success';
+                    passwordStrengthText.textContent = 'Password sangat kuat';
+                    passwordStrengthText.className = 'text-success';
+                } else if (score >= 4) {
+                    passwordStrengthBar.className = 'progress-bar bg-info';
+                    passwordStrengthText.textContent = 'Password kuat';
+                    passwordStrengthText.className = 'text-info';
+                } else if (score >= 3) {
+                    passwordStrengthBar.className = 'progress-bar bg-warning';
+                    passwordStrengthText.textContent = 'Password sedang';
+                    passwordStrengthText.className = 'text-warning';
+                } else if (score >= 1) {
+                    passwordStrengthBar.className = 'progress-bar bg-warning';
+                    passwordStrengthText.textContent = 'Password lemah';
+                    passwordStrengthText.className = 'text-warning';
+                } else {
+                    passwordStrengthBar.className = 'progress-bar bg-danger';
+                    passwordStrengthText.textContent = 'Password sangat lemah';
+                    passwordStrengthText.className = 'text-danger';
+                }
+            }
+
+            function updateCheck(elementId, isValid) {
+                const element = document.getElementById(elementId);
+                if (element) {
+                    const icon = element.querySelector('i');
+                    if (isValid) {
+                        icon.className = 'ti ti-check text-success';
+                        element.className = 'text-success';
+                    } else {
+                        icon.className = 'ti ti-x text-danger';
+                        element.className = 'text-muted';
+                    }
+                }
+            }
+        });
+    </script>
+ <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal9ac128a9029c0e4701924bd2d73d7f54)): ?>
+<?php $attributes = $__attributesOriginal9ac128a9029c0e4701924bd2d73d7f54; ?>
+<?php unset($__attributesOriginal9ac128a9029c0e4701924bd2d73d7f54); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal9ac128a9029c0e4701924bd2d73d7f54)): ?>
+<?php $component = $__componentOriginal9ac128a9029c0e4701924bd2d73d7f54; ?>
+<?php unset($__componentOriginal9ac128a9029c0e4701924bd2d73d7f54); ?>
+<?php endif; ?>
+<?php /**PATH C:\Users\ferry\Documents\SENADA\resources\views/user/edit.blade.php ENDPATH**/ ?>

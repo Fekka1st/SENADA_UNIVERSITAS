@@ -1,0 +1,31 @@
+# Laravel default
+/vendor
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/logs/*.log
+/bootstrap/cache/*.php
+
+# Environment
+.env
+.envdev
+.env.*
+!.env.example
+
+# PHPUnit
+.phpunit.cache
+.phpunit.result.cache
+
+# IDE & editor
+/.idea
+/.vscode
+/.fleet
+.phpactor.json
+Homestead.json
+Homestead.yaml
+
+# NPM/Yarn
+npm-debug.log
+yarn-error.log

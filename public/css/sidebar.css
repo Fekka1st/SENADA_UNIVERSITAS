@@ -1,0 +1,174 @@
+/* Sidebar Base Styles */
+.sidebar,
+.sidebar[data-background-color="white"] {
+    box-shadow: none;
+}
+
+@media (min-width: 992px) {
+    .sidebar .nav,
+    .sidebar[data-background-color="white"] .nav {
+        margin-top: 10px;
+    }
+}
+
+/* Main Menu Item Styles */
+.sidebar.sidebar-style-2 .nav .nav-item a {
+    padding: 10px 12px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar.sidebar-style-2 .nav .nav-item a i {
+    font-size: 21px !important;
+    min-width: 21px;
+    width: 21px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.sidebar.sidebar-style-2 .nav .nav-item a p {
+    flex: 1;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: normal;
+    color: #575962 !important;
+}
+
+/* Submenu Parent Button Styles */
+.sidebar.sidebar-style-2 .nav .nav-item.submenu > a {
+    position: relative;
+    padding: 10px 40px 10px 12px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar.sidebar-style-2 .nav .nav-item.submenu > a i {
+    font-size: 21px !important;
+    min-width: 21px;
+    width: 21px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.sidebar.sidebar-style-2 .nav .nav-item.submenu > a p {
+    flex: 1;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 5px;
+}
+
+/* Chevron icon ONLY for submenu parents with data-bs-toggle */
+.sidebar.sidebar-style-2 .nav .nav-item.submenu > a[data-bs-toggle="collapse"]::after {
+    content: '\ea5f';
+    font-family: 'tabler-icons';
+    font-size: 18px;
+    color: #575962;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+.sidebar.sidebar-style-2 .nav .nav-item.submenu > a[data-bs-toggle="collapse"][aria-expanded="true"]::after {
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.sidebar.sidebar-style-2 .nav .nav-item.submenu > a[data-bs-toggle="collapse"].collapsed::after {
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+/* Hover and Focus States */
+.sidebar.sidebar-style-2 .nav .nav-item a:hover p,
+.sidebar.sidebar-style-2 .nav .nav-item a:hover i,
+.sidebar.sidebar-style-2 .nav .nav-item a:focus p,
+.sidebar.sidebar-style-2 .nav .nav-item a:focus i,
+.sidebar.sidebar-style-2 .nav .nav-item a[data-bs-toggle="collapse"][aria-expanded="true"] p,
+.sidebar.sidebar-style-2 .nav .nav-item a[data-bs-toggle="collapse"][aria-expanded="true"] i {
+    /* color will be set dynamically via inline style */
+}
+
+.sidebar .nav.nav-primary > .nav-item a:focus i,
+.sidebar .nav.nav-primary > .nav-item a:hover i,
+.sidebar .nav.nav-primary > .nav-item a[data-bs-toggle="collapse"][aria-expanded="true"] i,
+.sidebar[data-background-color="white"] .nav.nav-primary > .nav-item a:focus i,
+.sidebar[data-background-color="white"] .nav.nav-primary > .nav-item a:hover i,
+.sidebar[data-background-color="white"] .nav.nav-primary > .nav-item a[data-bs-toggle="collapse"][aria-expanded="true"] i {
+    /* color will be set dynamically via inline style */
+}
+
+/* Collapse Animation */
+.sidebar .nav .collapse {
+    transition: all 0.3s ease;
+}
+
+/* Submenu Styles */
+.sidebar.sidebar-style-2 .nav .nav-collapse {
+    padding-left: 0;
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+
+.sidebar.sidebar-style-2 .nav .nav-collapse li {
+    list-style: none;
+}
+
+.sidebar.sidebar-style-2 .nav .nav-collapse li a {
+    padding: 8px 12px 8px 35px !important;
+    margin: 0;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0px;
+}
+
+.sidebar.sidebar-style-2 .nav .nav-collapse li a i {
+    font-size: 19px !important;
+    color: #575962;
+    transition: all 0.2s ease;
+}
+
+.sidebar.sidebar-style-2 .nav .nav-collapse li a p {
+    color: #575962;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sidebar.sidebar-style-2 .nav .nav-collapse li a:hover {
+    /* background will be set dynamically via inline style */
+}
+
+.sidebar.sidebar-style-2 .nav .nav-collapse li a:hover p,
+.sidebar.sidebar-style-2 .nav .nav-collapse li a:hover i {
+    /* color will be set dynamically via inline style */
+}
+
+.sidebar.sidebar-style-2 .nav .nav-collapse li a.active {
+    /* background and box-shadow will be set dynamically via inline style */
+}
+
+.sidebar.sidebar-style-2 .nav .nav-collapse li a.active p,
+.sidebar.sidebar-style-2 .nav .nav-collapse li a.active i {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
+.sidebar.sidebar-style-2 .nav .nav-collapse li a.active:hover p,
+.sidebar.sidebar-style-2 .nav .nav-collapse li a.active:hover i {
+    color: #ffffff !important;
+}
